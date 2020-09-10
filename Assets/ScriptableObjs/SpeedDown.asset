@@ -9,6 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29cae9ddf4c0b1f478ecd7ad08c44a8c, type: 3}
-  m_Name: Attackup
+  m_Script: {fileID: 11500000, guid: 34d9664b9078bff42acac387bf3a2d23, type: 3}
+  m_Name: SpeedDown
   m_EditorClassIdentifier: 
+  name: 10
+  power: 5
+  affinity: 5
+  percentage: -0.3
+  counter: 0
+  maxUses: 5

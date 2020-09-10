@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04d4f47a56cb3f04e9e5fadc30acbb32, type: 3}
   m_Name: new Critter
   m_EditorClassIdentifier: 
-  img: {fileID: 21300000, guid: 59f3b8fa28f95834d8ae642de958e55d, type: 3}
-  name: 
+  img: {fileID: 21300000, guid: 8ca7d3ad634940344b4329ad3be5d69e, type: 3}
+  name: critter0
   baseAttack: 0
   baseDefense: 0
   baseSpeed: 0
@@ -21,5 +21,6 @@ MonoBehaviour:
   bonusAttack: 0
   bonusDefense: 0
   bonusSpeed: 0
-  moveSet: []
-  affinity: 0
+  moveSet:
+  - {fileID: 11400000, guid: cb2f0878770e4004195769e4281fad30, type: 2}
+  affinity: 3
