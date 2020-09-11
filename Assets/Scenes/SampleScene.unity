@@ -293,7 +293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &300918069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,8 +307,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   critterScriptableObjects:
-  - {fileID: 11400000, guid: 7963f3ccb38eb7943992dfce87a76995, type: 2}
-  - {fileID: 11400000, guid: 9ddfc22d948c5b0498fcd93faad7fbc3, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &300918070
 Transform:
   m_ObjectHideFlags: 0
@@ -354,7 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players:
   - {fileID: 2137094225}
-  - {fileID: 300918069}
+  - {fileID: 1202914264}
   UIFacade: {fileID: 2020396289}
 --- !u!4 &495844457
 Transform:
@@ -647,7 +648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1202914264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,8 +662,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   critterScriptableObjects:
-  - {fileID: 11400000, guid: 7963f3ccb38eb7943992dfce87a76995, type: 2}
-  - {fileID: 11400000, guid: 9ddfc22d948c5b0498fcd93faad7fbc3, type: 2}
+  - {fileID: 11400000, guid: 280927a1db394664ab5c358307f066dd, type: 2}
+  - {fileID: 11400000, guid: 00aca94338ee2d24687376b3bda95dce, type: 2}
+  - {fileID: 11400000, guid: 21c5ec66dc415d14f846f29694df90ff, type: 2}
 --- !u!4 &1202914265
 Transform:
   m_ObjectHideFlags: 0
@@ -963,8 +965,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   critterScriptableObjects:
-  - {fileID: 11400000, guid: ac57ecddfe90ec84f8da235bc433107a, type: 2}
-  - {fileID: 11400000, guid: 03b2ba9b46bb90c4cb37ecd0643d836c, type: 2}
+  - {fileID: 11400000, guid: 280927a1db394664ab5c358307f066dd, type: 2}
+  - {fileID: 11400000, guid: 00aca94338ee2d24687376b3bda95dce, type: 2}
+  - {fileID: 11400000, guid: 68c98e19128c00e499e7dcdf8df95cd8, type: 2}
 --- !u!4 &2137094226
 Transform:
   m_ObjectHideFlags: 0

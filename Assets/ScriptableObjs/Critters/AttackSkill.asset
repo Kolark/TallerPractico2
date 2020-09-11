@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: e7030e8bf7e5ef24e8c817671571174e, type: 3}
   m_Name: AttackSkill
-  m_EditorClassIdentifier: Assembly-CSharp::AttackSkillScriptableObject
-  skillName: MegaAtaque
-  power: 5
-  affinity: 5
+  m_EditorClassIdentifier: 
+  skillName: ATTACK
+  power: 8
+  affinity: 0

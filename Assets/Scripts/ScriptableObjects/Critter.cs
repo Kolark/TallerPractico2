@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using UnityEditor;
 public class Critter
 {
     public Sprite img;
@@ -56,7 +56,15 @@ public class Critter
     public float BaseSpeed { get => baseSpeed; }
     public float Attack { get => baseAttack + bonusAttack; }
     public float Defense { get => baseDefense + bonusDefense; }
-    public float Speed { get => baseSpeed + bonusSpeed; }
+    //public float Speed { get => baseSpeed + bonusSpeed; }
+    public float Speed
+    {
+        get
+        {
+            if (baseSpeed + bonusSpeed < 0) { return 0; }
+            else { return baseSpeed + bonusSpeed; }
+        }
+    }
 
     public float CurrentHp { get => currentHP; }
     public float BaseHP { get => baseHP; }
@@ -65,39 +73,4 @@ public class Critter
 }
 
 
-[CreateAssetMenu(fileName = "new Critter", menuName = "Critter")]
-public class CritterScriptableObject: ScriptableObject
-{
-    public Sprite img;
-    public string crittername;
-    public int baseAttack;
-    public int baseDefense;
-    public int baseSpeed;
-    public float baseHP;
-    public List<SkillScriptableObject> moveSet;
-    public Affinity affinity;
 
-    public Critter getObject()
-    {
-        return new Critter(this);
-    }
-}
-
-
-//public void INIT()
-//{
-//    baseAttack = (baseAttack < 10 || baseAttack > 100 ? rnd.Next(1, 101) : baseAttack);
-//    baseDefense = (baseDefense < 10 || baseDefense > 100 ? rnd.Next(1, 101) : baseDefense);
-//    baseSpeed = (baseSpeed < 1 || baseSpeed > 50 ? rnd.Next(1, 51) : baseSpeed);
-//    currentHP = baseHP;
-
-
-//    if (moveSet.Count > 3)
-//    {
-//        List<Skill> temp = new List<Skill>();
-//        for (int i = 0; i < 3; i++)
-//        {
-//            temp.Add(moveSet[i]);
-//        }
-//        moveSet = temp;
-//    }

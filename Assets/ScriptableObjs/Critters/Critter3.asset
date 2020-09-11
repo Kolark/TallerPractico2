@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: _Critter2
-  m_EditorClassIdentifier: Assembly-CSharp::CritterScriptableObject
-  img: {fileID: 21300000, guid: 521b54c2f2188ff45a1046b19c39f081, type: 3}
-  crittername: Critter2
-  baseAttack: 10
-  baseDefense: 40
-  baseSpeed: 60
+  m_Script: {fileID: 11500000, guid: 5219eda969ec7af42abfec8bc98c15f4, type: 3}
+  m_Name: Critter3
+  m_EditorClassIdentifier: 
+  img: {fileID: 21300000, guid: eedfd87ffbbdbc04783896b7e831e303, type: 3}
+  crittername: qchei
+  baseAttack: 6
+  baseDefense: 56
+  baseSpeed: 25
   baseHP: 100
   moveSet:
   - {fileID: 11400000, guid: 3939709a64d0c1f4a93acf3ab85f1191, type: 2}
-  - {fileID: 11400000, guid: dffdeb151e6065d4f95d242ba1b7da6c, type: 2}
-  affinity: 0
+  - {fileID: 11400000, guid: f6b83104ff958e54790ea4df95191db6, type: 2}
+  affinity: 5

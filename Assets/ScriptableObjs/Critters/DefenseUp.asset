@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Supp_Attackup
-  m_EditorClassIdentifier: Assembly-CSharp::AttackUpScriptableObject
-  skillName: AttackUp
-  power: 5
+  m_Script: {fileID: 11500000, guid: b69da1e5384006347897343f6153d2fa, type: 3}
+  m_Name: DefenseUp
+  m_EditorClassIdentifier: 
+  skillName: DefenseUp
+  power: 0
   affinity: 0
   percentage: 0.3
   counter: 0

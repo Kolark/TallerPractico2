@@ -22,11 +22,3 @@ class DefenseUp : SupportSkill
         }
     }
 }
-[CreateAssetMenu(fileName = "DefenseUp", menuName = "Skills/SupportSkills/DefenseUp")]
-public class DefenseUpScriptableObject : SupportSkillScriptableObject
-{
-    public override Skill getObject()
-    {
-        return new DefenseUp(this);
-    }
-}

@@ -23,11 +23,3 @@ abstract class SupportSkill : Skill
     }
 }
 
-public abstract class SupportSkillScriptableObject : SkillScriptableObject
-{
-    [Space]
-    [Header("SupportSkillSettings")]
-    public float percentage;
-    public int counter = 0;
-    public int maxUses;
-}

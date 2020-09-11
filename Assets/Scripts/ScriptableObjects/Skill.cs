@@ -22,14 +22,3 @@ public abstract class Skill
 
     public abstract void DoSkill(Critter currentCritter, Critter enemyCritter);
 }
-
-
-public abstract class SkillScriptableObject : ScriptableObject
-{
-    [Header("Skill Settings")]
-    public string skillName;
-    public int power;
-    public Affinity affinity;
-
-    public abstract Skill getObject();
-}

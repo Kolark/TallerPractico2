@@ -21,20 +21,3 @@ class AttackSkill : Skill
         //Console.WriteLine(damageValue + " damage");
     }
 }
-[CreateAssetMenu(fileName = "AttackSkill", menuName = "Skills/AttackSkills/AttackSkill")]
-public class AttackSkillScriptableObject : SkillScriptableObject
-{
-    public override Skill getObject()
-    {
-        return new AttackSkill(this);
-    }
-}
-
-//public AttackSkill(string name, int power, Affinity affinity) : base(name, power, affinity)
-//{
-//    if (power <= 0 || power > 10)
-//    {
-//        //Console.WriteLine("Poder seleccionado invalido, se asignará un valor aleatorio entre 1 y 10");
-//        this.power = rnd.Next(1, 11);
-//    }
-//}

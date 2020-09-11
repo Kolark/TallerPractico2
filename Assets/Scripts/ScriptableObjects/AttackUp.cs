@@ -23,11 +23,3 @@ class AttackUp : SupportSkill
         }
     }
 }
-[CreateAssetMenu(fileName = "Attackup", menuName = "Skills/SupportSkills/Attackup")]
-public class AttackUpScriptableObject : SupportSkillScriptableObject
-{
-    public override Skill getObject()
-    {
-        return new AttackUp(this);
-    }
-}
