@@ -170,19 +170,3 @@ public class UserUI : MonoBehaviour
         return (float)(currentV / baseV) * 100;
     }
 }
-//void SetCritter(User player)
-//{
-
-//    for (int i = 0; i < player.critters.Count; i++)
-//    {
-//        critterImgs.Add(SpritePool.Instance.GetObject());
-//        //
-//        //Los hago hijo del buttonholder
-//        critterImgs[i].GetComponent<RectTransform>().SetParent(SpritesHolder, false);
-
-//        critterImgs[i].sprite = player.critters[i].img;
-//    }
-
-
-
-//}

@@ -12,7 +12,7 @@ public class EnemyBot : User
     }
     IEnumerator waitandExecute ()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         int command = Random.Range(0, base.fightingCritters.Peek().MoveSet.Count);
         base.ExecuteComand(command);
         Debug.Log("el bot ejecuto su comando");

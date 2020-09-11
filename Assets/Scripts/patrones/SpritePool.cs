@@ -47,7 +47,7 @@ public class SpritePool : MonoBehaviour, IPool<Image>
 
     public void Recycle(Image poolObject)
     {
-        imgs.Insert(0, poolObject);
+        imgs.Add(poolObject);
         poolObject.GetComponent<RectTransform>().SetParent(rectTransform, false);
     }
 }
