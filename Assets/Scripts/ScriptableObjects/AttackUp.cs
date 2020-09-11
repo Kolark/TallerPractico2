@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "Attackup", menuName = "Skills/SupportSkills/Attackup")]
+
 class AttackUp : SupportSkill
 {
+
+    public AttackUp(AttackUpScriptableObject skill) : base(skill)
+    {
+
+    }
+
     public override void DoSkill(Critter currentCritter, Critter enemyCritter)
     {
         if (currentCritter.bonusAttack < GetMaxBonus(currentCritter.BaseAttack))
@@ -16,9 +22,12 @@ class AttackUp : SupportSkill
             //Console.WriteLine("Can't use a AtkUp skill of the same type more than three times in the same critter, you lose your turn!");
         }
     }
-
-
-    public AttackUp(string name, int power, Affinity affinity, float porcentaje, int maxCounter) : base(name, power, affinity, porcentaje, maxCounter)
+}
+[CreateAssetMenu(fileName = "Attackup", menuName = "Skills/SupportSkills/Attackup")]
+public class AttackUpScriptableObject : SupportSkillScriptableObject
+{
+    public override Skill getObject()
     {
+        return new AttackUp(this);
     }
 }

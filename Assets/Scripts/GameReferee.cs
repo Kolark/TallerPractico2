@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameReferee : MonoBehaviour, Icommand
 {
     bool Winner = false;
     int Counter = 0;
-    public Player[] players = new Player[2];
+    public User[] players = new User[2];
 
     Critter[] critters = new Critter[2];
 
@@ -25,42 +25,67 @@ public class GameReferee : MonoBehaviour, Icommand
         instance = this;
         #endregion
         //Obtener players y critters
+        UIFacade.Init();
 
+        
     }
     private void Start()
     {
-        critters[0] = players[0].critters.Peek();//Player
-        UIFacade.SET(players[0]);
-        //critters[1] = players[1].critters.Peek();//EnemyBOT
+        critters[0] = players[0].fightingCritters.Peek();//Player
+        critters[1] = players[1].fightingCritters.Peek();//Bot
+        UIFacade.UpdateUserUI(players[0], 0);
+        UIFacade.UpdateUserUI(players[1], 1);
+        UIFacade.EnableUserButtons(0);
+        UIFacade.DisableUserButtons(1);
+        PassCommand(Counter % 2);
+        UIFacade.UpdateCrittersState(critters);
     }
-    public void Turn(int numberskill)
+
+
+    public void Execute(int numberskill)
     {
         int index = Counter % 2;
+        UIFacade.EnableUserButtons(1-index);
+        UIFacade.DisableUserButtons(index);
         critters[index].MoveSet[numberskill].DoSkill(critters[index],critters[1-index]);
-        if(critters[1 - index].Hp <= 0)
+        #region ifcritterdies
+
+        if(critters[1 - index].CurrentHp <= 0)
         {
             //Se lo agrego al ganador y se lo quito al perdedor
-            players[index].critters.Enqueue(players[1-index].critters.Dequeue());
+            players[index].AddCritter(players[1 - index].fightingCritters.Dequeue());
             //Se repone el del perdedor en caso de que todavia no haya un ganador
-            if(players[1 - index].critters.Count == 0)
+            if(players[1 - index].fightingCritters.Count > 0)
             {
-                //En caso de no tener mas critters Pierde
-                Winner = true;
+                //Sigue y se repone
+                critters[1 - index] = players[1 - index].fightingCritters.Peek();
+                //Reciclar y luego reponer
+                //Actualiza los sprites
+                UIFacade.RecycleCritterSprite(1 - index);
+                UIFacade.replenishCritter(players[1 - index].fightingCritters.Peek(),1 - index);
+                UIFacade.UpdateUserUI(players[1-index], 1-index);
             }
             else
             {
-                //Sigue y se repone
-                critters[1 - index] = players[1 - index].critters.Peek();
+                Winner = true;
+                SceneManager.LoadScene(1);
+                return;
             }
+            //Luego de esto se cambia los uis de los critters que tiene
+            
+            
         }
+        #endregion
         Counter++;
-        players[index].SetCommand(this);
-        players[1 - index].eraseCommand();
+        UIFacade.UpdateCrittersState(critters);
+        PassCommand(1-index);
+
     }
 
-    public void Execute(int n)
+    void PassCommand(int i)
     {
-        Debug.Log("xdd");
+        players[i].SetCommand(this);
+        players[1 - i].eraseCommand();
     }
 }
 //bool Winner = false;

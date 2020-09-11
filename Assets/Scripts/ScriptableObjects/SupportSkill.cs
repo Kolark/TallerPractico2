@@ -4,20 +4,15 @@ using UnityEngine;
 using System;
 abstract class SupportSkill : Skill
 {
-    [Space]
-    [Header("SupportSkillSettings")]
-    [SerializeField]
     protected float percentage;
-    [SerializeField]
     protected int counter = 0;
-    [SerializeField]
     protected int maxUses;
 
-    public SupportSkill(string name, int power, Affinity affinity, float porcentaje, int maxUses) : base(name, power, affinity)
+    public SupportSkill(SupportSkillScriptableObject skill) : base(skill)
     {
-        this.percentage = porcentaje;
+        this.percentage = skill.percentage;
         this.power = 0;
-        this.maxUses = maxUses;
+        this.maxUses = skill.maxUses;
     }
 
     public float Percentage { get => percentage; }
@@ -26,4 +21,13 @@ abstract class SupportSkill : Skill
     {
         return Math.Abs(percentage * baseAttribute * maxUses);
     }
+}
+
+public abstract class SupportSkillScriptableObject : SkillScriptableObject
+{
+    [Space]
+    [Header("SupportSkillSettings")]
+    public float percentage;
+    public int counter = 0;
+    public int maxUses;
 }

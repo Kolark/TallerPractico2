@@ -16,7 +16,7 @@ public class ButtonPool : MonoBehaviour, IPool<SkillButton>
 
     public int PoolSize;
 
-    private void Awake()
+    public void initPool()
     {
         #region singleton
         if (instance != null)
@@ -26,7 +26,7 @@ public class ButtonPool : MonoBehaviour, IPool<SkillButton>
         instance = this;
         #endregion
         rectTransform = GetComponent<RectTransform>();
-        PoolSize = 3;
+        PoolSize = 8;
         Fill();
     }
 
@@ -36,7 +36,6 @@ public class ButtonPool : MonoBehaviour, IPool<SkillButton>
         for (int i = 0; i < PoolSize; i++)
         {
             SkillButtons.Add(Instantiate(pooleable, this.transform));
-            SkillButtons[i].SetNumber(i);
         }
     }
 
@@ -49,7 +48,7 @@ public class ButtonPool : MonoBehaviour, IPool<SkillButton>
 
     public void Recycle(SkillButton poolObject)
     {
-        SkillButtons.Insert(0, poolObject);
+        SkillButtons.Add(poolObject);
         poolObject.GetComponent<RectTransform>().SetParent(rectTransform,false);
     }
 }

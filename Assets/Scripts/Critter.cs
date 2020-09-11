@@ -2,67 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-[CreateAssetMenu(fileName = "new Critter", menuName = "Critter")]
-public class Critter:ScriptableObject
+
+public class Critter
 {
     public Sprite img;
-    [SerializeField]
-    private string name;
-    [SerializeField]
+    private string crittername;
     private int baseAttack;
-    [SerializeField]
     private int baseDefense;
-    [SerializeField]
     private int baseSpeed;
-    [SerializeField]
-    private float hp;
+    private float baseHP;
 
-    [HideInInspector]
-    public float bonusAttack;
-    [HideInInspector]
-    public float bonusDefense;
-    [HideInInspector]
-    public float bonusSpeed;
-    [SerializeField]
+    private float currentHP;
+    public float bonusAttack = 0;
+    public float bonusDefense = 0;
+    public float bonusSpeed = 0;
+
     private List<Skill> moveSet;
-    [SerializeField]
+
     Affinity affinity;
 
 
     System.Random rnd = new System.Random();
 
-    public Critter(string name, int baseAttack, int baseDefense, int baseSpeed, float hp, Affinity affinity, List<Skill> skills)
+    public Critter(CritterScriptableObject critter)
     {
-        this.baseAttack = (baseAttack < 10 || baseAttack > 100 ? rnd.Next(1, 101) : baseAttack);
-        this.baseDefense = (baseDefense < 10 || baseDefense > 100 ? rnd.Next(1, 101) : baseDefense);
-        this.baseSpeed = (baseSpeed < 1 || baseSpeed > 50 ? rnd.Next(1, 51) : baseSpeed);
-        this.name = name;
-        this.hp = hp;
-        this.affinity = affinity;
-        
-        if (skills.Count <= 3)
-        {
-            moveSet = skills;
-        }
-        else
-        {
-            moveSet = new List<Skill>();
-            for (int i = 0; i < 3; i++)
-            {
-                moveSet.Add(skills[i]);
-            }
-        }
 
+        this.img = critter.img;
+        this.crittername = critter.crittername;
+        this.baseAttack = (critter.baseAttack < 10 || critter.baseAttack > 100 ? rnd.Next(1, 101) : critter.baseAttack);
+        this.baseDefense = (critter.baseDefense < 10 || critter.baseDefense > 100 ? rnd.Next(1, 101) : critter.baseDefense);
+        this.baseSpeed = (critter.baseSpeed < 1 || critter.baseSpeed > 50 ? rnd.Next(1, 51) : critter.baseSpeed);
+        this.baseHP = critter.baseHP;
+        this.currentHP = baseHP;
+
+        //moveset
+        moveSet = new List<Skill>();
+        for (int i = 0; i < critter.moveSet.Count; i++)
+        {
+            moveSet.Add(critter.moveSet[i].getObject());
+        }
+        this.affinity = critter.affinity;
     }
 
     public void GetDamage(float damageTaken)
     {
-        hp -= damageTaken;
-        if (hp < 0) hp = 0;
+        currentHP -= damageTaken;
+        if (currentHP < 0) currentHP = 0;
     }
 
-
-    public string Name { get => name; }
+    public string Name { get => crittername; }
     public float BaseAttack { get => baseAttack; }
     public float BaseDefense { get => baseDefense; }
     public float BaseSpeed { get => baseSpeed; }
@@ -70,7 +58,46 @@ public class Critter:ScriptableObject
     public float Defense { get => baseDefense + bonusDefense; }
     public float Speed { get => baseSpeed + bonusSpeed; }
 
-    public float Hp { get => hp; }
+    public float CurrentHp { get => currentHP; }
+    public float BaseHP { get => baseHP; }
     public Affinity Affinity { get => affinity; }
     public List<Skill> MoveSet { get => moveSet; }
 }
+
+
+[CreateAssetMenu(fileName = "new Critter", menuName = "Critter")]
+public class CritterScriptableObject: ScriptableObject
+{
+    public Sprite img;
+    public string crittername;
+    public int baseAttack;
+    public int baseDefense;
+    public int baseSpeed;
+    public float baseHP;
+    public List<SkillScriptableObject> moveSet;
+    public Affinity affinity;
+
+    public Critter getObject()
+    {
+        return new Critter(this);
+    }
+}
+
+
+//public void INIT()
+//{
+//    baseAttack = (baseAttack < 10 || baseAttack > 100 ? rnd.Next(1, 101) : baseAttack);
+//    baseDefense = (baseDefense < 10 || baseDefense > 100 ? rnd.Next(1, 101) : baseDefense);
+//    baseSpeed = (baseSpeed < 1 || baseSpeed > 50 ? rnd.Next(1, 51) : baseSpeed);
+//    currentHP = baseHP;
+
+
+//    if (moveSet.Count > 3)
+//    {
+//        List<Skill> temp = new List<Skill>();
+//        for (int i = 0; i < 3; i++)
+//        {
+//            temp.Add(moveSet[i]);
+//        }
+//        moveSet = temp;
+//    }

@@ -2,33 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : User
 {
-    public Critter[] crittersToADD = new Critter[3];
-    public Queue<Critter> critters = new Queue<Critter>();
-    Icommand commandToExecute;
 
-    
-    private void Awake()
+    public override void SetCommand(Icommand command)
     {
-        for (int i = 0; i < crittersToADD.Length; i++)
-        {
-            critters.Enqueue(crittersToADD[i]);
-        }
+        base.SetCommand(command);
+        Debug.Log("Turno del player");
     }
 
-    public void SetCommand(Icommand command)
-    {
-        commandToExecute = command;
-    }
-
-    public void eraseCommand()
-    {
-        commandToExecute = null;
-    }
-    public void ExecuteComand(int number)
-    {
-        //Debe ser llamado desde los botones
-        commandToExecute.Execute(number);
-    }
 }

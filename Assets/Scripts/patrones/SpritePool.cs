@@ -16,7 +16,7 @@ public class SpritePool : MonoBehaviour, IPool<Image>
     public List<Image> Imgs { get => imgs; }
 
     public int PoolSize;
-    private void Awake()
+    public void initpool()
     {
         #region singleton
         if (instance != null)
@@ -26,7 +26,7 @@ public class SpritePool : MonoBehaviour, IPool<Image>
         instance = this;
         #endregion
         rectTransform = GetComponent<RectTransform>();
-        PoolSize = 3;
+        PoolSize = 8;
         Fill();
     }
 
