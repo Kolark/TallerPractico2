@@ -37,3 +37,5 @@ Otra cosa que vale la pena menciona es como se relaciónan los botones para real
  La clase Stats sigue igual que en el anterior taller.
  
  Nota: Por facilidad para esta demostración GameReferee tiene serializado ambos jugadores, al igual que el UIFacade.
+ 
+ Imágenes tomadas de: https://pokemon.alexonsager.net/
