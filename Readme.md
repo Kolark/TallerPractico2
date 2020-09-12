@@ -1,8 +1,8 @@
 # TallerPractico 2 Readme
 Realizado por:
-Felipe Loaiza Martinez 
-Juan Camilo Sierra M.
-Daniel Muñoz Perez
+* Felipe Loaiza Martinez.
+* Juan Camilo Sierra M.
+* Daniel Muñoz Perez.
 
 
 
