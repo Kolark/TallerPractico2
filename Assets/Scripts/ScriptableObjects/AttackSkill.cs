@@ -18,7 +18,7 @@ class AttackSkill : Skill
     {
         float damageValue = (power + currentCritter.Attack) * Stats.Matrix[(int)(affinity), (int)(enemyCritter.Affinity)];
         enemyCritter.GetDamage(damageValue);
-        string msg = currentCritter.Name  + " Le hizo " + damageValue.ToString() + " daño a " + enemyCritter.Name;
+        string msg = currentCritter.Name  + " did " + damageValue.ToString() + " damage to " + enemyCritter.Name;
         UIFacade.Instance.SkillEffectText(msg);
         //Console.WriteLine(damageValue + " damage");
     }

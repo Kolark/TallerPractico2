@@ -17,13 +17,13 @@ class SpeedDown : SupportSkill
             int amount = (int)(enemyCritter.BaseSpeed * percentage);
             enemyCritter.bonusSpeed -= (int)(enemyCritter.BaseSpeed * percentage);
 
-            string msg = currentCritter.Name + " Le bajo la velocidad en un " + (percentage * 100).ToString() + "% a " + enemyCritter.Name;
+            string msg = currentCritter.Name + " Lowered the speed by " + (percentage * 100).ToString() + "% to " + enemyCritter.Name;
             UIFacade.Instance.SkillEffectText(msg);
         }
         else
         {
             //Console.WriteLine("Can't use a sPdown skill of the same type more than three times on the same critter, you lose your turn!");
-            UIFacade.Instance.SkillEffectText("Alcanzo el limite de usos para la habilidad del SpeedDown");
+            UIFacade.Instance.SkillEffectText(currentCritter.Name +" Reached the limit uses for speedDown");
         }
     }
 }

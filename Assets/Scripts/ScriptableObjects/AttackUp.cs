@@ -18,13 +18,13 @@ class AttackUp : SupportSkill
             int amount = (int)(currentCritter.BaseAttack * percentage);
             currentCritter.bonusAttack += amount;
 
-            string msg = currentCritter.Name + " Se subio el daño " + (percentage*100).ToString() + "%";
+            string msg = currentCritter.Name + " increased his Attack by " + (percentage*100).ToString() + "%";
             UIFacade.Instance.SkillEffectText(msg);
         }
         else
         {
             //Console.WriteLine("Can't use a AtkUp skill of the same type more than three times in the same critter, you lose your turn!");
-            UIFacade.Instance.SkillEffectText("Alcanzo el limite de usos para la habilidad del AttackUp");
+            UIFacade.Instance.SkillEffectText(currentCritter.Name + " Reached the limit uses for Attack Up");
         }
     }
 }

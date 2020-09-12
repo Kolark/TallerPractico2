@@ -21,4 +21,5 @@ MonoBehaviour:
   moveSet:
   - {fileID: 11400000, guid: 3939709a64d0c1f4a93acf3ab85f1191, type: 2}
   - {fileID: 11400000, guid: fa678e9421d4516479182626cd9782ec, type: 2}
+  - {fileID: 11400000, guid: f6b83104ff958e54790ea4df95191db6, type: 2}
   affinity: 0

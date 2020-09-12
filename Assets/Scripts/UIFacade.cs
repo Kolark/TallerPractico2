@@ -102,8 +102,8 @@ public class UIFacade : MonoBehaviour
 
     public void SetText(int n)
     {
-        playerResponsible.text = "El jugador " + (n + 1).ToString() + " hizo lo siguiente: ";
-        nextTurn.text = "Ahora es turno del jugador " + (1 - n + 1).ToString();
+        playerResponsible.text = "The player " + (n + 1).ToString() + " did the following: ";
+        nextTurn.text = "Now is the turn of player " + (1 - n + 1).ToString();
     }
     public void SkillEffectText(string txt)
     {
