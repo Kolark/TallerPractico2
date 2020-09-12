@@ -1,4 +1,10 @@
 # TallerPractico 2 Readme
+Realizado por:
+* Felipe Loaiza Martinez.
+* Juan Camilo Sierra M.
+* Daniel Muñoz Perez.
+
+
 
 Para empezar a explicar nuestra implementación: Estas son unas Clases que tenemos 
 
