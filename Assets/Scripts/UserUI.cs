@@ -121,8 +121,10 @@ public class UserUI : MonoBehaviour
     {
         if (skillButtons.Count > 0)
         {
+
             for (int i = 0; i < skillButtons.Count; i++)
             {
+                skillButtons[i].OnButtonPressed = null;
                 ButtonPool.Instance.Recycle(skillButtons[i]);
             }
             skillButtons = new List<SkillButton>();

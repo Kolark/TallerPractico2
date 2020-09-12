@@ -8,14 +8,12 @@ public class EnemyBot : User
     {
         base.SetCommand(command);
         StartCoroutine(waitandExecute());
-        Debug.Log("Turno del bot");
     }
     IEnumerator waitandExecute ()
     {
         yield return new WaitForSeconds(2f);
         int command = Random.Range(0, base.fightingCritters.Peek().MoveSet.Count);
         base.ExecuteComand(command);
-        Debug.Log("el bot ejecuto su comando");
     }
     
 }

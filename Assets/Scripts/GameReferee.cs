@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class GameReferee : MonoBehaviour, Icommand
 {
     bool Winner = false;
@@ -26,8 +27,8 @@ public class GameReferee : MonoBehaviour, Icommand
         #endregion
         //Obtener players y critters
         UIFacade.Init();
-
         
+
     }
     private void Start()
     {
@@ -39,6 +40,7 @@ public class GameReferee : MonoBehaviour, Icommand
         UIFacade.DisableUserButtons(1);
         PassCommand(Counter % 2);
         UIFacade.UpdateCrittersState(critters);
+        UIFacade.SetText(Counter);
     }
 
 
@@ -78,7 +80,7 @@ public class GameReferee : MonoBehaviour, Icommand
         Counter++;
         UIFacade.UpdateCrittersState(critters);
         PassCommand(1-index);
-
+        UIFacade.SetText(index);
     }
 
     void PassCommand(int i)

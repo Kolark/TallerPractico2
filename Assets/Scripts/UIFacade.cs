@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class UIFacade : MonoBehaviour
 {
     RectTransform rect;
@@ -14,9 +15,20 @@ public class UIFacade : MonoBehaviour
     [SerializeField]
     ButtonPool buttonPool;
 
+
+    private static UIFacade instance;
+    public static UIFacade Instance { get => instance; }
+
     public void Init()
     {
         rect = GetComponent<RectTransform>();
+        #region singleton
+        if (instance != null)
+        {
+            Destroy(this);
+        }
+        instance = this;
+        #endregion
         userUIs = new UserUI[2];
         for (int i = 0; i < 2; i++)
         {
@@ -78,4 +90,23 @@ public class UIFacade : MonoBehaviour
         userUIs[i].DisableButtons();
     }
     #endregion
+
+    [Header("Texts")]
+    [SerializeField]
+    TextMeshProUGUI playerResponsible;
+    [SerializeField]
+    TextMeshProUGUI crittertxt;
+    [SerializeField]
+    TextMeshProUGUI nextTurn;
+
+
+    public void SetText(int n)
+    {
+        playerResponsible.text = "El jugador " + (n + 1).ToString() + " hizo lo siguiente: ";
+        nextTurn.text = "Ahora es turno del jugador " + (1 - n + 1).ToString();
+    }
+    public void SkillEffectText(string txt)
+    {
+        crittertxt.text = txt;
+    }
 }

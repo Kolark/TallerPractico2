@@ -8,7 +8,6 @@ public class Player : User
     public override void SetCommand(Icommand command)
     {
         base.SetCommand(command);
-        Debug.Log("Turno del player");
     }
 
 }

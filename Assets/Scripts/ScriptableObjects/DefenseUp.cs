@@ -14,11 +14,16 @@ class DefenseUp : SupportSkill
         if (currentCritter.bonusDefense < GetMaxBonus(currentCritter.BaseDefense))
         {
             //Console.WriteLine("defense Up");
-            currentCritter.bonusDefense += (int)(currentCritter.BaseDefense * percentage);
+            int amount = (int)(currentCritter.BaseDefense * percentage);
+            currentCritter.bonusDefense += amount;
+
+            string msg = currentCritter.Name + " Se subio la defense en un " + (percentage * 100).ToString() + "%";
+            UIFacade.Instance.SkillEffectText(msg);
         }
         else
         {
             //Console.WriteLine("Can't use a defUp skill of the same type more than three times in the same critter, you lose your turn!");
+            UIFacade.Instance.SkillEffectText("Alcanzo el limite de usos para la habilidad del DefenseUp");
         }
     }
 }
