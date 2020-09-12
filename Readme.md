@@ -35,3 +35,5 @@ Otra cosa que vale la pena menciona es como se relaciónan los botones para real
  GameReferee ---Se comunica con --> UiFacade ----Se comunica con ---> UserUI.
  
  La clase Stats sigue igual que en el anterior taller.
+ 
+ Nota: Por facilidad para esta demostración GameReferee tiene serializado ambos jugadores, al igual que el UIFacade.
