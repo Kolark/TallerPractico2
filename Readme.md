@@ -36,6 +36,9 @@ Otra cosa que vale la pena menciona es como se relaciónan los botones para real
  
  La clase Stats sigue igual que en el anterior taller.
  
- Nota: Por facilidad para esta demostración GameReferee tiene serializado ambos jugadores, al igual que el UIFacade.
+ Notas: 
+ * Por facilidad para esta demostración GameReferee tiene serializado ambos jugadores, al igual que el UIFacade.
+ * El enunciado pedia un arbitro, debido a que nuestro esta en ingles lo nombramos como GameReferee.
+ * Se le anima a que experimente y ponga jugador vs jugador o EnemyBot vs EnemyBot
  
  Imágenes tomadas de: https://pokemon.alexonsager.net/
