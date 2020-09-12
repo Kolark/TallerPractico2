@@ -58,7 +58,6 @@ public class UserUI : MonoBehaviour
     {
         SetSprites(user);
         NextCritter();
-        SetCurrentCritterName(user.fightingCritters.Peek());
     }
     public void initButtons(Player player)
     {
@@ -104,10 +103,6 @@ public class UserUI : MonoBehaviour
         SpritePool.Instance.Recycle(imgToRecycle);
     }
     #endregion
-    public void SetCurrentCritterName(Critter critter)
-    {
-        critterName.text = critter.Name;
-    }
     #region Buttons
     public void SetButtons(User user)
     {
@@ -154,6 +149,7 @@ public class UserUI : MonoBehaviour
     //Actualiza stats del critter con el que esta peleando en ese momento
     public void UpdateCurrentCritter(Critter critter)
     {
+        critterName.text = critter.Name;
         hp.value = GetPercentage(critter.CurrentHp,critter.BaseHP);
         hptext.text = critter.CurrentHp.ToString() + " | " + critter.BaseHP.ToString();
         attack.text = "Attack : " + critter.Attack.ToString() + " | " + critter.BaseAttack.ToString();

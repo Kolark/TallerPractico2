@@ -55,18 +55,13 @@ public class GameReferee : MonoBehaviour, Icommand
             //Se lo agrego al ganador y se lo quito al perdedor
             Critter critterLost = players[1 - index].fightingCritters.Dequeue();
             players[1 - index].Remove(critterLost);
-            players[index].AddCritter(critterLost);
-            
-
+            players[index].AddCritter(critterLost);      
             //Se repone el del perdedor en caso de que todavia no haya un ganador
             if(players[1 - index].fightingCritters.Count > 0)
             {
-                //Sigue y se repone
                 critters[1 - index] = players[1 - index].fightingCritters.Peek();
-                //Reciclar y luego reponer
-                //Actualiza los sprites
                 UIFacade.RecycleCritterSprite(1 - index);
-                UIFacade.replenishCritter(players[1 - index].fightingCritters.Peek(),1 - index);
+                UIFacade.replenishCritter(1 - index);
                 UIFacade.UpdateUserUI(players[1-index], 1-index);
             }
             else

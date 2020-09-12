@@ -307,9 +307,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   critterScriptableObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 280927a1db394664ab5c358307f066dd, type: 2}
+  - {fileID: 11400000, guid: 21c5ec66dc415d14f846f29694df90ff, type: 2}
+  - {fileID: 11400000, guid: 68c98e19128c00e499e7dcdf8df95cd8, type: 2}
 --- !u!4 &300918070
 Transform:
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &495844455
 GameObject:
@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   critterScriptableObjects:
-  - {fileID: 11400000, guid: 280927a1db394664ab5c358307f066dd, type: 2}
+  - {fileID: 11400000, guid: 68c98e19128c00e499e7dcdf8df95cd8, type: 2}
   - {fileID: 11400000, guid: 00aca94338ee2d24687376b3bda95dce, type: 2}
   - {fileID: 11400000, guid: 21c5ec66dc415d14f846f29694df90ff, type: 2}
 --- !u!4 &1202914265
@@ -677,7 +677,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1415021241
 GameObject:
@@ -753,6 +753,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415021241}
   m_CullTransparentMesh: 0
+--- !u!1 &1780028178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1780028180}
+  - component: {fileID: 1780028179}
+  m_Layer: 0
+  m_Name: EnemyBot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1780028179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780028178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbbac7bad1a9f74e8b4ccfc27b9fca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  critterScriptableObjects:
+  - {fileID: 11400000, guid: 280927a1db394664ab5c358307f066dd, type: 2}
+  - {fileID: 11400000, guid: 00aca94338ee2d24687376b3bda95dce, type: 2}
+  - {fileID: 11400000, guid: 21c5ec66dc415d14f846f29694df90ff, type: 2}
+--- !u!4 &1780028180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780028178}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 234.68085, y: 66.68101, z: -3.840601}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2020396285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooleable: {fileID: 5464752543566796697, guid: af540e12895e43b4e8a1611d1ef70c26,
     type: 3}
-  PoolSize: 0
+  poolSize: 8
 --- !u!114 &7849129329931053844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,7 +1113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooleable: {fileID: 6139391003592642382, guid: 0ef790e36343371478aa7fe9528b2aab,
     type: 3}
-  PoolSize: 0
+  poolSize: 8
 --- !u!1 &8331364108912405123
 GameObject:
   m_ObjectHideFlags: 0

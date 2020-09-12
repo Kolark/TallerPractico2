@@ -22,8 +22,8 @@ public class UIFacade : MonoBehaviour
         {
             userUIs[i] = Instantiate(userInfo, rect);
         }
-        SpritePool.initpool();
-        buttonPool.initPool();
+        SpritePool.InitPool();
+        buttonPool.InitPool();
     }
     public void UpdateUserUI(User user, int i)
     {
@@ -39,10 +39,10 @@ public class UIFacade : MonoBehaviour
 
 
 
-    public void replenishCritter(Critter critter,int i)
+    public void replenishCritter(int i)
     {
         userUIs[i].NextCritter();
-        userUIs[i].SetCurrentCritterName(critter);
+        //userUIs[i].SetCurrentCritterName(critter);
 
     }
 
