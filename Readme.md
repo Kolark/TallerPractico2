@@ -47,4 +47,5 @@ Otra cosa que vale la pena menciona es como se relaciónan los botones para real
  * El enunciado pedia un arbitro, debido a que nuestro esta en ingles lo nombramos como GameReferee.
  * Se le anima a que experimente y ponga jugador vs jugador o EnemyBot vs EnemyBot
  
+ La manera en como mostramos los effectos de los SupportSkill es que cada atributo del Critter se muestra como : valor Actual | valor Base. Asi se puede ver cuando sube por ejemplo el Attack o baja el Speed.
  Imágenes tomadas de: https://pokemon.alexonsager.net/
